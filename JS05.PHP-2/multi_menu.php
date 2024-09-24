@@ -1,21 +1,21 @@
 <?php
 $menu = [
     [
-    "nama" => "Beranda"
-],
-[
-    "nama" => "Berita",
-    "subMenu" => [
-        [
-            "nama" => "Wisata",
-            "subMenu" => [
-                [
-                "nama" => "Pantai",
-            ],
+        "nama" => "Beranda"
+    ],
+    [
+        "nama" => "Berita",
+        "subMenu" => [
             [
-                "nama" => "Gunung",
-            ]
-        ]
+                "nama" => "Wisata",
+                "subMenu" => [
+                    [
+                        "nama" => "Pantai"
+                    ],
+                    [
+                        "nama" => "Gunung"
+                    ]
+                ]
             ],
             [
                 "nama" => "Kuliner"
@@ -23,21 +23,30 @@ $menu = [
             [
                 "nama" => "Hiburan"
             ]
-]
-            ],
-            [
-                "nama" => "Tentang"
-            ],
-            [
-                "nama" => "Kontak"
-            ],
-        ];
-        function tampikanMenuBertingkat(array $menu){
-            echo "<ul>";
-            foreach ($menu as $key => $item){
-                echo "<li>{$item['nama']}</li>";
-            }
-            echo "</ul>";
+        ]
+    ],
+    [
+        "nama" => "Tentang"
+    ],
+    [
+        "nama" => "Kontak"
+    ],
+];
+
+function tampikanMenuBertingkat(array $menu) {
+    echo "<ul>";
+    foreach ($menu as $item) {
+        echo "<li>{$item['nama']}";
+        
+        if (isset($item['subMenu'])) {
+            tampikanMenuBertingkat($item['subMenu']);
         }
-        tampikanMenuBertingkat($menu);
-        ?>
+        
+        echo "</li>";
+    }
+    echo "</ul>";
+}
+
+// Call the function to display the menu
+tampikanMenuBertingkat($menu);
+?>
