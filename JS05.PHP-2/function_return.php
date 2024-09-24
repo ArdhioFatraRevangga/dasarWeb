@@ -13,4 +13,4 @@ function perkenalan($nama, $salam="Assalamualaikum"){
 }
 
 perkenalan ("Fatra");   
-?>
+?> 
