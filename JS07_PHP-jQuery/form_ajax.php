@@ -13,7 +13,7 @@
             <option value="pisang">Pisang</option>
             <option value="mangga">Mangga</option>
             <option value="jeruk">Jeruk</option>
-        </select>
+</select>
         <br><br>
 
         <label>Pilih Warna Favorit:</label><br>
